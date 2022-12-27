@@ -15,6 +15,8 @@
     [Inject]
     public IBugService BugService { get; set; }
 
-    protected void HandleValidSubmit(){}
+    protected void HandleValidSubmit(){
+        BugService.AddBug(AddBug);
+    }
 
 }
