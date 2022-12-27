@@ -1,6 +1,6 @@
 ﻿<h3>Add New Bug</h3>
 @page "/new-bug"
-@inject IBugService BugService;
+
 
 <EditForm Model="AddBug">
     <InputText @bind-Value="@AddBug.Title" placeholder= "Enter Title"></InputText>
@@ -11,6 +11,9 @@
 
 @code {
     public Bug AddBug { get; set; } = new Bug();
+
+    [Inject]
+    public IBugService BugService { get; set; }
 
     protected void HandleValidSubmit(){}
 
